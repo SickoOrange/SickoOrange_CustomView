@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SuccessView successView;
     private View myView;
     private AlertDialog dialog;
+    private AlertDialog loadingDialog;
+    private Button loadingview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +24,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         successView = (SuccessView) myView.findViewById(R.id.loadingView);
         dialog = new AlertDialog.Builder(this).setView(myView).
                 setNegativeButton("OK", null).create();
+        loadingDialog = new AlertDialog.Builder(this).setView(this.getLayoutInflater().
+                inflate(R.layout.loadingview, null)).setNegativeButton("OK", null).create();
 
         Success = (Button) findViewById(R.id.success);
         Fail = (Button) findViewById(R.id.fail);
+        loadingview = (Button) findViewById(R.id.myLoading);
         Success.setOnClickListener(this);
         Fail.setOnClickListener(this);
+        loadingview.setOnClickListener(this);
 
 
     }
@@ -46,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 successView.setStart(true);
                 dialog.show();
                 break;
+            case R.id.myLoading:
+                loadingDialog.show();
+
         }
     }
 }

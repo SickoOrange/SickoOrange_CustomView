@@ -43,11 +43,11 @@ public class LoadingView extends View {
 
     private void init() {
         mPaintOne = new Paint();
-        mPaintOne.setColor(Color.RED);
+        mPaintOne.setColor(Color.WHITE);
         mPaintOne.setAntiAlias(true);
 
         mPaintTwo = new Paint();
-        mPaintTwo.setColor(Color.RED);
+        mPaintTwo.setColor(Color.WHITE);
         mPaintTwo.setAntiAlias(true);
         path = new Path();
     }
